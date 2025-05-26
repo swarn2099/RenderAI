@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "NestJS News API",
+    "description": "Test collection for the News API endpoints in the NestJS backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Top Headlines",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/news/top-headlines?country=us&category=business&pageSize=10&page=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "news", "top-headlines"],
+          "query": [
+            { "key": "country", "value": "us" },
+            { "key": "category", "value": "business" },
+            { "key": "pageSize", "value": "10" },
+            { "key": "page", "value": "1" }
+          ]
+        },
+        "description": "Get top headlines with optional filters"
+      }
+    },
+    {
+      "name": "Search Everything",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/news/search?q=bitcoin&from=2024-01-01&sortBy=publishedAt&pageSize=10&page=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "news", "search"],
+          "query": [
+            { "key": "q", "value": "bitcoin" },
+            { "key": "from", "value": "2024-01-01" },
+            { "key": "sortBy", "value": "publishedAt" },
+            { "key": "pageSize", "value": "10" },
+            { "key": "page", "value": "1" }
+          ]
+        },
+        "description": "Search through millions of articles"
+      }
+    },
+    {
+      "name": "Get Sources",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/news/sources?category=technology&language=en&country=us",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "news", "sources"],
+          "query": [
+            { "key": "category", "value": "technology" },
+            { "key": "language", "value": "en" },
+            { "key": "country", "value": "us" }
+          ]
+        },
+        "description": "Get available news sources"
+      }
+    },
+    {
+      "name": "Category Breakdown",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/news/categories",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "news", "categories"]
+        },
+        "description": "Get a breakdown of news articles by category"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}

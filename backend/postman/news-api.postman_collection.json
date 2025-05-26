@@ -1,0 +1,134 @@
+{
+  "info": {
+    "name": "News API",
+    "description": "Collection for testing the News API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Top Headlines",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/news/headlines?country=us&category=business&pageSize=10&page=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "news", "headlines"],
+          "query": [
+            {
+              "key": "country",
+              "value": "us",
+              "description": "The 2-letter ISO 3166-1 code of the country"
+            },
+            {
+              "key": "category",
+              "value": "business",
+              "description": "The category to get headlines for"
+            },
+            {
+              "key": "pageSize",
+              "value": "10",
+              "description": "The number of results to return per page"
+            },
+            {
+              "key": "page",
+              "value": "1",
+              "description": "The page number"
+            }
+          ]
+        },
+        "description": "Get top headlines with optional filters"
+      }
+    },
+    {
+      "name": "Search Everything",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/news/search?q=bitcoin&from=2024-01-01&sortBy=publishedAt&pageSize=10&page=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "news", "search"],
+          "query": [
+            {
+              "key": "q",
+              "value": "bitcoin",
+              "description": "Keywords or phrase to search for"
+            },
+            {
+              "key": "from",
+              "value": "2024-01-01",
+              "description": "Start date (YYYY-MM-DD)"
+            },
+            {
+              "key": "sortBy",
+              "value": "publishedAt",
+              "description": "Sort order (relevancy, popularity, publishedAt)"
+            },
+            {
+              "key": "pageSize",
+              "value": "10",
+              "description": "The number of results to return per page"
+            },
+            {
+              "key": "page",
+              "value": "1",
+              "description": "The page number"
+            }
+          ]
+        },
+        "description": "Search through millions of articles"
+      }
+    },
+    {
+      "name": "Get Sources",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/news/sources?category=technology&language=en&country=us",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "news", "sources"],
+          "query": [
+            {
+              "key": "category",
+              "value": "technology",
+              "description": "The category to get sources for"
+            },
+            {
+              "key": "language",
+              "value": "en",
+              "description": "The 2-letter ISO-639-1 code of the language"
+            },
+            {
+              "key": "country",
+              "value": "us",
+              "description": "The 2-letter ISO 3166-1 code of the country"
+            }
+          ]
+        },
+        "description": "Get available news sources"
+      }
+    },
+    {
+      "name": "Category Breakdown",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/news/category-breakdown",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "news", "category-breakdown"]
+        },
+        "description": "Get a breakdown of news articles by category"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
